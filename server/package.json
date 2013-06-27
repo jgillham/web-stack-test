@@ -30,5 +30,7 @@
     "grunt-coffeelint": "0.0.6"
     ,
     "grunt-cli": "~0.1.9"
+	,
+	"bson": "~0.1.9"
   }
 }
