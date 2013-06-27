@@ -31,5 +31,30 @@ app.get( '/api', (req, res) ->
     return res.send( 'Our Sample API is up...' )
 )
 
+# Expose API to get angular users.
+app.get( '/getangularusers', ( req, res ) ->
+    res.header( "Access-Control-Allow-Origin", "http://localhost" )
+    res.header( "Access-Control-Allow-Methods", "GET, POST" )
+    
+    # Call Mongo via JS API
+    db.things.find( '', ( err, users ) ->
+        if err or not useers
+            console.log( "No users found" )
+            res.send( "No users found" )
+        else
+            res.writeHead( 200, {
+                'Content-Type' : 'application/json'
+            } )
+            str = '['
+            users.forEach( ( user ) ->
+                str = str + '{ "name" : "' + user.username + '"},' + '\n'
+            )
+            str = str.trim()
+            str = str.substring( 0, str.length - 1 )
+            str = str + ']'
+            res.end( str )
+    )
+)
+
 # Open connection door way.
 app.listen( 1212 )
