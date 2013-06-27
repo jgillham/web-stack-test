@@ -1,5 +1,6 @@
 # Compiled files.
 app/
+server/app.js
 
 # Node packages.
 node_modules/

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     ,
     coffee: {
       compileDefault: {
-        files: grunt.file.expandMapping( "**/*.coffee", "app", {
+        files: grunt.file.expandMapping( "**/*.coffee", "", {
             //flatten: true
             cwd: "src/"
             ,
