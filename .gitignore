@@ -1,0 +1,9 @@
+# Compiled files.
+app/
+
+# Node packages.
+node_modules/
+
+# Vi/vim swap files.
+.*.swp
+.*.swn
