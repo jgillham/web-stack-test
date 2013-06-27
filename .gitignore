@@ -1,6 +1,7 @@
 # Compiled files.
-app/
-server/app.js
+app.js
+Gruntfile.js
+public/
 
 # Node packages.
 node_modules/

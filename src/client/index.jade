@@ -1,0 +1,29 @@
+doctype 5
+html( lang = "en", ng-app = "myApp" )
+  head
+    title = "Angular Node MongoDB Example"
+    link( rel = 'stylesheet', href = 'css/app.css', type = 'text/css' )
+    link( rel = 'stylesheet:q', href = 'css/bootstrap.css', type = 'text/css' )
+    script( src = "lib/angular/angular.js"  )
+    script( src = "js/angularnodecontroller.js"  )
+  body( ng-controller = "UserListCtrl" )
+    #container.container-fluid
+      #container.row-fluid
+        #container.span2
+          p.
+            Search:
+          input( ng-model = "user" )
+          #container.span3
+            ul( class = "users" )
+              li( ng-repeat = "user in users | filter:user" ) {{user.name}}
+        #container.span10
+          form( name = "myform", id = "myform", ng-submit = "save()" )
+            fieldset
+              legend = "New User"
+              #container.control-group
+                center
+                  input( type = "text", placeholder="User", ng-model="username", size=50, required )
+                  input( type = "text", placeholder="Password", ng-model="password", size=50, required )
+                  input( type = "text", placeholder="Email", ng-model="Email", size=50, required )
+              #container
+                button( type = "submit" ) Save Now...
